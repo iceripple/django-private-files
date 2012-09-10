@@ -12,7 +12,7 @@ class PrivateFieldFile(FieldFile):
         model_name  = self.instance._meta.object_name.lower()
         field_name = self.field.name
         pk = self.instance.pk
-        filename = os.path.basename(self.path)
+        filename = os.path.basename(self.name)
         return reverse('private_files-file', args=[app_label, model_name, field_name, pk, filename])
         
 
